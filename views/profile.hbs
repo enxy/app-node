@@ -1,0 +1,11 @@
+<h2> User of id {{ id }}</h2>
+<h3>Data: </h3>
+  {{# each user as |val key| }}
+    {{# each val as |val2 key2| }}
+        {{ val2 }}: {{ key2 }}
+    {{/each}}<br>
+  {{/each}}
+  <form action='/test' method='POST'>
+    <input type="text" name="number">
+    <button type="Submit">Submit</button>
+  </form>

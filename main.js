@@ -9,15 +9,14 @@ const child_process = require('child_process');
 const hbs = require('express-handlebars');
 const routes = require('./routers/index');
 
-
-app.set('port', process.env.PORT || 8081);
-
+app.set('port', process.env.PORT || 8082);
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'layout', layoutsDir: __dirname + '/views'}));
-//var handlebars = require('express-handlebars').create({defaultLayout: 'main'});
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'hbs');
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, '/public')));
 
 app.use('/', routes);
 
