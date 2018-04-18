@@ -27,7 +27,7 @@ module.exports = {
          renderHTML('./views/login.html', response);
          break;
       default:
-         response.writeHead(404);
+         response.writeHead(40);
          response.write('Route not found');
          response.end();
     }

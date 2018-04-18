@@ -14,7 +14,7 @@ app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'layout', layoutsDir: __dirname + '/views'}));
 app.set('views', path.join(__dirname, '/views'));
-app.set('view engine', 'hbs');
+app.set('view engine');
 
 app.use(express.static(path.join(__dirname, '/public')));
 
