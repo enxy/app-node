@@ -21,7 +21,7 @@ module.exports = {
     var path = url.parse(request.url).pathname;
     switch(path){
       case '/':
-         renderHTML('./views/index.html', response);
+         renderHTML('./views/in.html', response);
          break;
       case '/login':
          renderHTML('./views/login.html', response);
